@@ -44,6 +44,7 @@ export default {
 .main {
     display: flex;
     flex-direction: column;
+    font-size: 35px;
 }
 
 .container {
