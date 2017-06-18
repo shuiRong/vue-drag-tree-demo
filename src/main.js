@@ -1,11 +1,10 @@
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import store from './store'
-import TreeView from "vue-json-tree-view"
+import TreeView from 'vue-json-tree-view'
+import VueDragTree from 'vue-drag-tree'
 
+Vue.component('vue-drag-tree', VueDragTree)
 Vue.config.productionTip = false
 Vue.use(TreeView)
 
@@ -13,7 +12,6 @@ Vue.use(TreeView)
 new Vue({
     el: '#app',
     router,
-    store,
     template: '<App/>',
     components: {
         App
