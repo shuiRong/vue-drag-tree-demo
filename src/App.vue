@@ -28,6 +28,6 @@ a {
 }
 
 body {
-    background: #7B1FA2;
+    background: white;
 }
 </style>
