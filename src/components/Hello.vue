@@ -10,7 +10,7 @@
         </div>
         <div class='container'>
             <div class='treeSelf'>
-                <vue-drag-tree :model='data'></vue-drag-tree>
+                <vue-drag-tree :model='data' :current-highlight='true' :default-text='"新生成接点"' :hover-color='"lightblue"' :highlight-color='"green"'></vue-drag-tree>
             </div>
             <div class='showSec'>
                 <pre>{{formatData}}</pre>
@@ -117,8 +117,9 @@ export default {
         assignData(data) {
             this.data = data
         },
-        vueDragNodeClicked(id) {
-            // 更新当前被点击节点的id.
+        curNodeClicked(model, component) {
+            // 当前被点击节点的model和其所在组件.
+            console.log('model', model, 'compon', component)
         },
     }
 }
