@@ -116,7 +116,7 @@ export default {
     methods: {
         assignData(data) {
             this.data = data
-        },
+        },vue-drag-
         curNodeClicked(model, component) {
             // 当前被点击节点的model和其所在组件.
             console.log('model', model, 'compon', component)
