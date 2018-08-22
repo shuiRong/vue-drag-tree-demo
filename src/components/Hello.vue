@@ -117,6 +117,9 @@ export default {
       return JSON.stringify(this.data, null, 2)
     }
   },
+  created() {
+    console.log(this)
+  },
   methods: {
     allowDrag(model, component) {
       return true
@@ -151,7 +154,7 @@ export default {
 </script>
 
 <style scoped>
-@import url(../assets/font.css);
+@import url(https://fonts.googleapis.com/css?family=Tangerine|Open+Sans:300);
 
 .main {
   display: flex;
@@ -222,17 +225,5 @@ ul {
 }
 a {
   color: black;
-}
-</style>
-
-<style>
-.tree-view-item-key {
-  font-size: 20px;
-  color: black;
-}
-.tree-view-item-value {
-  font-size: 20px;
-  font-weight: bold;
-  color: white;
 }
 </style>
