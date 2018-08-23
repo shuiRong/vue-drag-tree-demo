@@ -54,14 +54,6 @@
         <div>
           npm install vue-drag-tree --save
         </div>
-        <h4>Usage</h4>
-        <p>main.js</p>
-        <div>
-          import Vue from 'vue'
-          <br> import VueDragTree from 'vue-drag-tree'
-          <br>
-          <br> Vue.component('vue-drag-tree', VueDragTree)
-        </div>
         <p>
           <a href='https://github.com/shuiRong/vue-drag-tree' target='_blanket'>more...</a>
         </p>
