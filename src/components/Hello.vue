@@ -10,114 +10,71 @@
     </div>
     <div class='container'>
       <div class='treeSelf'>
-        <vue-drag-tree :data='data' :allowDrag='allowDrag' :allowDrop='allowDrop' :defaultText='"New Node"' @current-clicked='curNodeClicked' @drag="dragHandler" @drag-enter="dragEnterHandler" @drag-leave="dragLeaveHandler" @drag-over="dragOverHandler" @drag-end="dragEndHandler" @drop="dropHandler"></vue-drag-tree>
+        <vue-drag-tree :data='data' :allowDrag='allowDrag' :allowDrop='allowDrop' :defaultText='"New Node"' @current-clicked='curNodeClicked' @drag="dragHandler" @drag-enter="dragEnterHandler" @drag-leave="dragLeaveHandler" @drag-over="dragOverHandler" @drag-end="dragEndHandler" @drop="dropHandler" :disableDBClick='true' expand-all></vue-drag-tree>
       </div>
       <div class='showSec'>
         <pre>{{formatData}}</pre>
       </div>
     </div>
     <div class='sentence'>
-      <div class='senMain'>
-        <div class='lang'>
-          <span @click='en = true'>
-            EN
-          </span>
-          /
-          <span @click='en = false'>
-            中文
-          </span>
-        </div>
-        <ul>
-          <template v-if='en'>
-            <li>
-              <strong>Double click on an item to turn it into a folder</strong>
-            </li>
-            <li>
-              You can drag and drop the tree node, even between two different levels
-            </li>
-          </template>
-          <template v-else>
-            <li>
-              <strong>双击节点，把节点转换成"文件夹"</strong>
-            </li>
-            <li>
-              你可以拖拉节点，交换两个节点的位置。当然，交换也会反映到Data里
-            </li>
-          </template>
-        </ul>
-      </div>
-    </div>
-    <div class='sentence'>
-      <div class='senMain getstart'>
-        <h3>Getting Start</h3>
-        <h4>Install</h4>
-        <div>
-          npm install vue-drag-tree --save
-        </div>
-        <p>
-          <a href='https://github.com/shuiRong/vue-drag-tree' target='_blanket'>more...</a>
-        </p>
-      </div>
+      <a href='https://github.com/shuiRong/vue-drag-tree' target='_blanket'>View Documentation On Github</a>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Hello',
+  name: "Hello",
   data() {
     return {
       en: false,
       data: [
         {
-          name: 'Node 0-0',
+          name: "Node 0-0",
           id: 0,
           children: [
             {
-              name: 'Node 1-1',
+              name: "Node 1-1",
               id: 3,
               children: [
                 {
-                  name: 'Node 2-1',
+                  name: "Node 2-1",
                   id: 4,
                   children: []
                 },
                 {
-                  name: 'Node 2-2',
+                  name: "Node 2-2",
                   id: 10,
                   children: []
                 }
               ]
             },
             {
-              name: 'Node 1-2',
+              name: "Node 1-2",
               id: 13,
               children: []
             }
           ]
         },
         {
-          name: 'Node 0-1',
+          name: "Node 0-1",
           id: 14,
           children: []
         }
       ]
-    }
+    };
   },
   computed: {
     formatData() {
-      return JSON.stringify(this.data, null, 2)
+      return JSON.stringify(this.data, null, 2);
     }
-  },
-  created() {
-    console.log(this)
   },
   methods: {
     allowDrag(model, component) {
-      return true
+      return true;
     },
     allowDrop(model, component) {
-      return true
+      return true;
     },
     curNodeClicked(model, component) {
       // 当前被点击节点的model和其所在组件.
@@ -142,11 +99,14 @@ export default {
       // console.log('dropHandler: ', model, component, e);
     }
   }
-}
+};
 </script>
 
 <style scoped>
-@import url(https://fonts.googleapis.com/css?family=Tangerine|Open+Sans:300);
+@font-face {
+  font-family: "Tangerine";
+  src: url("../assets/Tangerine-Regular.ttf");
+}
 
 .main {
   display: flex;
@@ -155,25 +115,20 @@ export default {
   align-items: center;
 }
 .sentence {
-  background: #d3dce6;
-  margin-top: 2rem;
-  width: 50%;
-  padding: 1rem;
+  margin: 2rem auto;
   font-size: 25px;
+}
+
+a {
+  text-decoration: none;
+  color: #8492a6;
 }
 .senMain {
   background: white;
   padding: 1rem;
   color: #8492a6;
 }
-.lang {
-  font-size: 20px;
-  color: #8492a6;
-  font-weight: bold;
-}
-ul {
-  margin-left: 1rem;
-}
+
 .container {
   width: 60%;
   display: flex;
@@ -205,17 +160,7 @@ ul {
   font-weight: bold;
 }
 .howtouse > div {
-  font-family: 'Tangerine';
+  font-family: "Tangerine", cursive;
   font-size: 5rem;
-}
-.getstart > div {
-  background: #d3dce6;
-  padding: 0.5rem 1rem;
-}
-.getstart > p {
-  margin: 0.5rem 0;
-}
-a {
-  color: black;
 }
 </style>
