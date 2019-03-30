@@ -17,8 +17,10 @@
       </div>
     </div>
     <div class='sentence'>
-      <a href='https://github.com/shuiRong/vue-drag-tree' target='_blanket'>View Documentation On Github</a>
+      <a href='https://github.com/shuiRong/vue-drag-tree' target='_blanket'>View Documentation</a>
     </div>
+    <iframe src="https://ghbtns.com/github-btn.html?user=shuiRong&repo=vue-drag-tree&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+    <a href="https://996.icu" target='_blank'><img src="https://img.shields.io/badge/link-996.icu-red.svg"></a>
   </div>
 </template>
 
